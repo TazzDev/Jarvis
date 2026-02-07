@@ -32,3 +32,11 @@ This will:
 - The circular waveform is a **visual effect**, not driven by real audio samples from TTS (the Speech Synthesis API does not expose raw audio).
 - Speech recognition and speech synthesis support may vary depending on your OS and Electron/Chromium version.
 
+## Roadmap
+
+  1. Persistent Storage 
+      - First use SQL based databases and then switch to vector databases
+  2. Removing the window frame and making it wake-word compatible
+  3. Using AppleScript to make it work with MacOS functions for everyday tasks
+  4. Make the waveform dynamic.
+
