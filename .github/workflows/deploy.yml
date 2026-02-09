@@ -1,0 +1,39 @@
+name: Build and deploy Jarvis Electron
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Vite frontend
+        run: npm run build
+
+      # If you later add an Electron packaging script (e.g. "npm run dist"),
+      # you can add a step here to run it and upload the installers.
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jarvis-electron-dist
+          path: |
+            dist/**
+            package.json
+            main.js
