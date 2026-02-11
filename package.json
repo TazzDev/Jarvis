@@ -25,6 +25,9 @@
     "vite": "^4.5.3"
   },
   "dependencies": {
+    "@picovoice/porcupine-node": "^4.0.1",
+    "@picovoice/pvrecorder-node": "^1.2.8",
+    "dotenv": "^17.2.4",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   }
